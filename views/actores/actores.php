@@ -38,10 +38,10 @@ require_once("../html/layout.php");
         <span class="close" onclick="cerrarModal()">&times;</span>
         <h3>Actor</h3>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" title="Debe ingresar solo letras y espacios" required>
+        <input type="text" id="nombre" name="nombre" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s\-]+$" title="Debe ingresar solo letras y espacios" required>
 
         <label for="apellido">Apellido:</label>
-        <input type="text" id="apellido" name="apellido" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" title="Debe ingresar solo letras y espacios" required>
+        <input type="text" id="apellido" name="apellido" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s\-]+$" title="Debe ingresar solo letras y espacios" required>
 
         <label for="fechaNacimiento">Fecha de Nacimiento:</label>
         <input type="date" id="fechaNacimiento" name="fechaNacimiento" required>
@@ -54,5 +54,6 @@ require_once("../html/layout.php");
         </div>
     </form>
 </div>
+
 
 <script src="actores.js"></script>

@@ -67,13 +67,13 @@ require_once("../html/layout.php");
     <div class="card">
         <h3>Películas Recientes</h3>
         <ul>
-            <li>Inception (2010)</li>
-            <li>The Godfather (1972)</li>
-            <li>Dune (2021)</li>
-            <li>Pulp Fiction (1994)</li>
-            <li>Avatar (2009)</li>
-            <li>The Dark Knight (2008)</li>
-            <li>Interstellar (2014)</li>
+            <p>Inception (2010)</p>
+            <p>The Godfather (1972)</p>
+            <p>Dune (2021)</p>
+            <p>Pulp Fiction (1994)</p>
+            <p>Avatar (2009)</p>
+            <p>The Dark Knight (2008)</p>
+            <p>Interstellar (2014)</p>
         </ul>
     </div>
     <div class="card">

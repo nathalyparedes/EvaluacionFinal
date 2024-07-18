@@ -39,6 +39,7 @@ body {
     color: var(--text-color);
     position: relative;
     overflow: hidden;
+    gap: 2px;
 }
 
 .card img {
@@ -56,6 +57,7 @@ body {
 
 .card-content {
     padding: 10px;
+    gap: 2px;
 }
 
 .card h3 {

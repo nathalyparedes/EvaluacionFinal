@@ -42,7 +42,7 @@ require_once("../html/layout.php");
         <ul id="titulo_pelicula_suggestions" class="suggestions-list"></ul>
 
         <label for="nombre_actor">Actor:</label>
-        <input type="text" id="nombre_actor" name="nombre_actor" pattern="[A-Za-zñÑáéíóúÁÉÍÓÚ\s]+" required>
+        <input type="text" id="nombre_actor" name="nombre_actor" pattern="^[A-Za-zñÑáéíóúÁÉÍÓÚ\s\-]+$" required>
         <ul id="nombre_actor_suggestions" class="suggestions-list"></ul>
 
         <div class="button-container">
@@ -50,5 +50,7 @@ require_once("../html/layout.php");
         </div>
     </form>
 </div>
+
+
 
 <script src="actores_peliculas.js"></script>

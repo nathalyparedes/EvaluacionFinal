@@ -29,7 +29,7 @@ $(document).ready(function() {
         const rows = $('#tablaPeliculas tbody tr');
 
         rows.each(function() {
-            const title = $(this).find('td:nth-child(2)').text().toLowerCase();
+            const title = $(this).find('td:nth-child(1)').text().toLowerCase();
             $(this).toggle(title.includes(searchTerm));
         });
     });

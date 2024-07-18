@@ -22,11 +22,27 @@
             <li><a href="../actores/actores.php"><span class="material-icons-sharp">person</span><span class="text">Actores</span></a></li>
             <li><a href="../actores_peliculas/actores_peliculas.php"><span class="material-icons-sharp">contacts</span><span class="text">Actores y Películas</span></a></li>
         </ul>
+        
+        <footer>
+    <div class="container-fluid">
+        <div class="bg-light rounded-top p-4">
+            <div class="row">
+                <div class="col-12 col-sm-6 text-center text-sm-start">
+                    &copy; <a href="#">NathalyP</a>
+                </div>
+                <div class="col-12 col-sm-6 text-center text-sm-end">
+                    By me
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+        
     </div>
     <div class="topbar">
-        <h1>Proyecto Final</h1>
+        <h1>Evaluación Final</h1>
     </div>
-    
+
 
     </body>
     <script>

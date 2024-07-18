@@ -11,10 +11,13 @@ body {
 .sidebar {
     position: fixed;
     width: 250px;
-    height: 100%;
     background-color: var(--secondary-color);
     padding-top: 20px;
     transition: width 0.3s;
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+    overflow: auto;
 }
 
 .sidebar.collapsed {
@@ -64,6 +67,7 @@ body {
 .sidebar.collapsed ul li a .text {
     display: none;
 }
+
 
 /* Barra superior */
 .topbar {
@@ -430,3 +434,43 @@ input[type="number"] {
     border-bottom: none; 
 }
 
+/* Estilos para el pie de página */
+  
+  .sidebar footer {
+    margin-top: auto; /* Empuja el pie de página hacia abajo */
+    background-color: var(--card-background);
+    color: var(--text-color);
+    padding: 25px 10px; /* Espacio superior e inferior */
+    text-align: center;
+    position: relative; 
+  }
+  
+  footer a {
+    color: var(--secondary-color);
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .sidebar footer .container-fluid {
+    max-width: 1140px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+  }
+  
+  footer .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  footer .col-12 {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  footer .bg-light {
+    background-color: var(--background-color);
+  }
+  
+  
