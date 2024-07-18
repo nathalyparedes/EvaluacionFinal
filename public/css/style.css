@@ -1,0 +1,432 @@
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Menu lateral */
+.sidebar {
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: var(--secondary-color);
+    padding-top: 20px;
+    transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 40px 0 0 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    color: #e1dede;
+    text-decoration: none;
+    display: block;
+    transition: color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    color: #ffffff;
+}
+
+.sidebar ul li {
+    text-align: center;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar ul li a .icon {
+    margin-right: 0;
+}
+
+.sidebar ul li:first-child {
+    margin-top: 20px; 
+}
+
+.sidebar.collapsed ul li a .text {
+    display: none;
+}
+
+/* Barra superior */
+.topbar {
+    position: fixed;
+    width: calc(100% - 250px);
+    height: 40px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    padding: 10px 20px;
+    margin-left: 250px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    transition: margin-left 0.3s, width 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.topbar.collapsed {
+    width: calc(100% - 80px);
+    margin-left: 80px;
+}
+
+/* Contenido principal */
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+    padding-top: 60px; 
+    display: flex;
+    justify-content: space-between; /* Distribución en dos columnas */
+    flex-wrap: wrap; /* Envolver elementos en varias líneas */
+}
+
+.main-content.collapsed {
+    margin-left: 80px;
+}
+
+/* Estilos adicionales para elementos */
+.header {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--text-color); /* Ajuste del color de texto */
+}
+
+.card {
+    background-color: var(--card-background);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    flex: 0 1 calc(50% - 20px); /* Tamaño de las tarjetas en dos columnas */
+}
+
+.card h3 {
+    margin-top: 0;
+    color: var(--secondary-color); /* Color de título de tarjeta */
+}
+
+.card p {
+    color: var(--text-color); /* Color de texto de tarjeta */
+}
+
+/* Estilos para la paleta de colores en tonos oscuros */
+:root {
+    --primary-color: #1a1a1a; /* Color oscuro principal */
+    --secondary-color: #0d83b1; /* Color azul oscuro */
+    --background-color: #121212; /* Fondo general oscuro */
+    --text-color: #e0e0e0; /* Color claro para texto */
+    --card-background: #242424; /* Fondo oscuro para tarjetas */
+}
+
+/* Estilos para el botón de colapso */
+.collapse-btn {
+    background-color: var(--primary-color);
+    border: none;
+    color: #ffffff;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    margin-bottom: 20px; 
+    gap: 3px;
+}
+
+.collapse-btn.collapsed {
+    left: 80px;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--card-background);
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+    max-width: 400px; 
+    min-width: 300px; 
+    text-align: center; 
+    border-radius: 10px; 
+}
+
+.modal-content h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: var(--secondary-color);
+}
+
+.modal-content label {
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.modal-content input,
+.modal-content {
+    background-color: var(--card-background);
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+.modal-content .button-container {
+    display: flex;
+    justify-content: center; /* Centra los botones horizontalmente */
+    gap: 10px; /* Espacio entre botones */
+}
+
+.modal-content button {
+    width: 150px; /* Ancho fijo de los botones */
+    padding: 10px; /* Ajusta el padding de los botones */
+    font-size: 16px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #0d83b1; /* Color de fondo al pasar el mouse */
+}
+
+.modal-content button:last-child {
+    margin-right: 0; /* Sin margen derecho para el último botón */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#peliculaForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#peliculaForm label, #peliculaForm input {
+    margin-bottom: 10px;
+}
+
+#peliculaForm button {
+    margin-top: 10px;
+}
+
+/* Estilos para la barra de búsqueda */
+.search-container {
+    text-align: center; /* Centra horizontalmente el contenido del contenedor */
+}
+
+.search-bar {
+    display: inline-block; /* Hace que las barras de búsqueda se alineen en línea */
+    margin-bottom: 20px; /* Espacio entre las barras de búsqueda */
+}
+
+.search-bar input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px; /* Ancho fijo */
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-background);
+    color: var(--text-color);
+}
+
+table th, table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: var(--secondary-color);
+    color: #ffffff;
+}
+
+table tr:nth-child(even) {
+    background-color: #333333;
+}
+
+table tr:hover {
+    background-color: #444444;
+}
+
+table td a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: #e5e2e2;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield; /* Firefox */
+}
+
+.table .btn {
+    margin-right: 5px; 
+    margin-bottom: 5px; 
+}
+
+@media (min-width: 992px) {
+    .sidebar {
+        margin-left: 0;
+    }
+
+    .sidebar.open {
+        margin-left: -250px;
+    }
+
+    .content {
+        width: calc(100% - 250px);
+    }
+
+    .content.open {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .sidebar {
+        margin-left: -250px;
+    }
+
+    .sidebar.open {
+        margin-left: 0;
+    }
+
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.btn-editar {
+    background-color: #d7a100;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+.btn-eliminar {
+    background-color: #dc3545; 
+    color: #fff; 
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-left: 5px; 
+}
+
+/* Estilos para la lista de sugerencias */
+.suggestions-list {
+    list-style-type: none; 
+    padding: 0; 
+    margin: 10px 0; 
+    background-color: var(--card-background); 
+    max-height: 200px; 
+    overflow-y: auto; 
+    font-size: 12px;
+    bottom: 4px;
+    text-align: left;
+}
+
+.suggestions-list li {
+    padding: 10px; 
+    cursor: pointer; 
+    transition: background-color 0.3s; 
+}
+
+.suggestions-list li:hover {
+    background-color: var(--secondary-color); 
+    color: #ffffff;
+}
+
+.suggestions-list li:last-child {
+    border-bottom: none; 
+}
+
